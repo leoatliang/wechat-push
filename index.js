@@ -1,31 +1,23 @@
 const { params } = require('./config');
 const { getToken } = require('./getToken');
 const { sendMessage } = require('./sendMessage');
-const { getDate, getWeather, getLoveDays, getValueByMonth } = require('./utils');
-
+const { getDate, getWeather, getLoveDays, getLoveWords } = require('./utils');
 
 const start = async () => {
     let access_token = await getToken(params);
     let { wea, low, high } = await getWeather();
-    let menstr = getValueByMonth();
     let loveDays = getLoveDays();
-
+    let loveWords = await getLoveWords();
 
     const data = {
         today: { value: getDate() },
-        city: { value: '蚌埠' },
+        city: { value: '马鞍山' },
         wea: { value: wea },
         low: { value: low },
         high: { value: high },
-        menstr: { value: menstr },
         days: { value: loveDays },
-        fight: {value: '开心消消乐 + 王者荣耀 => 加加油'},
+        words: { value: loveWords },
     }
-
-
-    // console.log(data);
-    // return;
-
 
     sendMessage({
         access_token,

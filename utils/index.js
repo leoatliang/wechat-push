@@ -1,6 +1,4 @@
-const fs = require('fs');
 const axios = require('axios');
-
 
 // 1. 获取时间
 const formatWeek = (week) => {
@@ -30,7 +28,6 @@ const getDate = () => {
     const day = new Date().getDate();
 
     const week = new Date().getDay();
-
     return `${year}年${month}月${day}日  ${formatWeek(week)}`;
 }
 
@@ -38,7 +35,12 @@ const getDate = () => {
 // 2. 获取天气
 const getWeather = () => {
     return new Promise((resolve, reject) => {
-        axios.get('http://v1.yiketianqi.com/free/day?appid=92695596&appsecret=pnfmwF01&unescape=1&cityid=101220201')
+
+        const appId = 'xxxxxxxx';
+        const appSecret = 'xxxxxxxx';
+        const cityID = '101220501'; // 马鞍山
+
+        axios.get(`http://v1.yiketianqi.com/free/day?appid=${appId}&appsecret=${appSecret}&unescape=1&cityid=${cityID}`)
             .then(res => {
                 const { data } = res;
                 resolve({
@@ -54,60 +56,39 @@ const getWeather = () => {
 }
 
 
-// 3. 获取恋爱天数
+// 3. 获取土味情话
+const getLoveWords = () => {
+    return new Promise((resolve, reject) => {
+
+        const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+
+        axios.get(`https://apis.tianapi.com/saylove/index?key=${apiKey}`)
+            .then(res => {
+                const { data: { result } } = res;
+                resolve(result.content)
+            })
+            .catch(err => {
+                reject(err);
+            })
+    })
+}
+
+
+// 4. 获取恋爱天数
 const getLoveDays = () => {
     const startDate = new Date('2023-02-12');
     const currentUTCTime = new Date().toISOString();
-    const beijingTime = new Date(new Date(currentUTCTime).getTime() + (8 * 60 * 60 * 1000)); // 将UTC时间转换为北京时间
+    const beijingTime = new Date(new Date(currentUTCTime).getTime() + (8 * 60 * 60 * 1000));
 
     const oneDayMilliseconds = 24 * 60 * 60 * 1000;
     const daysDiff = Math.floor((beijingTime - startDate) / oneDayMilliseconds);
-
     return daysDiff.toString();
-}
-
-
-// 4. 获取生理期信息
-const readJSONFile = (filePath) => {
-    try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error('读取 JSON 文件时出错:', err);
-        return null;
-    }
-}
-
-const getValueByMonth = () => {
-    const currentMonth = new Date().getMonth() + 1; // 0 ~ 11 ==> 1 ~ 12
-    const currentDay = new Date().getDate();
-
-    const monthsList = ['NULL', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-
-    const jsonData = readJSONFile('utils/record.json');
-
-    if (jsonData[monthsList[currentMonth]] == "NULL") {
-        const value = jsonData[monthsList[currentMonth - 1]];
-        if (currentDay <= value) {
-            return `${currentMonth - 1}.${value}，预计于 ${value - currentDay} 天后到来！`;
-        } else {
-            return `${currentMonth - 1}.${value}，较上月已推迟 ${currentDay - value} 天！`;
-        }
-    } else {
-        const value = jsonData[monthsList[currentMonth]];
-        const diff = currentDay - value;
-
-        const pre = `${currentMonth}.${value}，已过 ${diff} 天，`;
-        const post = diff <= 7 ? '忌辛辣刺激食物、冰镇饮品等！' : '可乐、烧烤、冰淇淋...';
-
-        return `${pre}${post}`;
-    }
 }
 
 
 module.exports = {
     getDate,
     getWeather,
-    getLoveDays,
-    getValueByMonth
+    getLoveWords,
+    getLoveDays
 }

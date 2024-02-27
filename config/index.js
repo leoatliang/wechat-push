@@ -1,12 +1,9 @@
 const params = {
-    appid: 'wx1b945ee52d07dbde',
-    secret: '82a7c0f975f3a8d4eab76373e071a144',
-    touser: 'o0-3O6YPVavlz62wFwlMe-TAUjOY',
-    template_id: 'zWerRTWP4299RlPFpzZyL6-ZoxDQED1W8nqKQEIEE3w'
+    appid: 'xxxxxxxxxxxxxxxxxx', // 登录测试号就会出现
+    secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',// 同上
+    touser: 'xx-xxxxxxxxxxxxxxxxxx-xxxxxx', // 被推送用户，微信扫码生成
+    template_id: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxx' // 新建 模板消息，生成
 };
-
-//o0-3O6d2rhUdK5mZwauGrFuE20PQ ==> qian
-//o0-3O6YPVavlz62wFwlMe-TAUjOY ==> liang
 
 module.exports = {
     params

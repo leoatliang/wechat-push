@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 const sendMessage = (params) => {
     const { access_token, touser, template_id, data = {} } = params;
 
@@ -11,7 +10,6 @@ const sendMessage = (params) => {
             data
         })
 };
-
 
 module.exports = {
     sendMessage
