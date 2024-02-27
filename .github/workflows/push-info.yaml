@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * *" # UTC（国际标准时间）4时0分，北京+8小时 ，代表北京时间中午12时0分
+    - cron: "0 0 * * *" # UTC（国际标准时间）0时0分，北京+8小时 ，代表北京时间上午8时0分
 
 jobs:
   run-coupons:
