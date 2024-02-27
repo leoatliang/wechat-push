@@ -5,9 +5,9 @@ const { getDate, getWeather, getLoveDays, getLoveWords } = require('./utils');
 
 const start = async () => {
     let access_token = await getToken(params);
-    let { wea, low, high } = await getWeather();
+    let { wea, low, high } = await getWeather(params);
     let loveDays = getLoveDays();
-    let loveWords = await getLoveWords();
+    let loveWords = await getLoveWords(params);
 
     const data = {
         today: { value: getDate() },

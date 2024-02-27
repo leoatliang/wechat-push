@@ -33,12 +33,12 @@ const getDate = () => {
 
 
 // 2. 获取天气
-const getWeather = () => {
+const getWeather = (params) => {
     return new Promise((resolve, reject) => {
 
-        const appId = 'xxxxxxxx';
-        const appSecret = 'xxxxxxxx';
-        const cityID = '101220501'; // 马鞍山
+        const appId = params.weather_app_id;
+        const appSecret = params.weather_app_secret;
+        const cityID = params.weather_city_id;
 
         axios.get(`http://v1.yiketianqi.com/free/day?appid=${appId}&appsecret=${appSecret}&unescape=1&cityid=${cityID}`)
             .then(res => {
@@ -57,10 +57,10 @@ const getWeather = () => {
 
 
 // 3. 获取土味情话
-const getLoveWords = () => {
+const getLoveWords = (params) => {
     return new Promise((resolve, reject) => {
 
-        const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        const apiKey = params.words_api_key;
 
         axios.get(`https://apis.tianapi.com/saylove/index?key=${apiKey}`)
             .then(res => {
