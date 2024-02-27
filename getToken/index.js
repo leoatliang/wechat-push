@@ -1,7 +1,7 @@
-const axios = require('axios');
-const moment = require('moment');
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
+const moment = require('moment');
 
 const getToken = (params) => {
     return new Promise((resolve, reject) => {
