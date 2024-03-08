@@ -13,7 +13,7 @@ const start = async () => {
 
     const data = {
         today: { value: getDate() },
-        city: { value: '蚌埠' },
+        city: { value: '当涂县' },
         wea: { value: wea },
         low: { value: low },
         high: { value: high },
