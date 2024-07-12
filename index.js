@@ -13,7 +13,7 @@ const start = async () => {
 
     const data = {
         today: { value: getDate() },
-        city: { value: '当涂县' },
+        city: { value: '蚌埠市' },
         wea: { value: wea },
         low: { value: low },
         high: { value: high },
@@ -21,6 +21,8 @@ const start = async () => {
         days: { value: loveDays },
         fight: {value: '开心消消乐 + 王者荣耀 => 加加油'},
     }
+
+    console.log(data);
 
     sendMessage({
         access_token,

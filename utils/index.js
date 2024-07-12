@@ -42,14 +42,14 @@ const getWeather = (params) => {
         const appid = params.wea_app_id;
         const appsecret = params.wea_app_secret;
         const cityid = params.wea_city_id;
-
-        axios.get(`http://v1.yiketianqi.com/free/day?appid=${appid}&appsecret=${appsecret}&unescape=1&cityid=${cityid}`)
+        // http://v1.yiketianqi.com/free/day?appid=${appid}&appsecret=${appsecret}&unescape=1&cityid=${cityid}
+        axios.get(`http://v1.yiketianqi.com/api?unescape=1&version=v61&appid=${appid}&appsecret=${appsecret}&cityid=${cityid}`)
             .then(res => {
                 const { data } = res;
                 resolve({
                     wea: data.wea,
-                    low: data.tem_night,
-                    high: data.tem_day
+                    low: data.tem2,
+                    high: data.tem1
                 })
             })
             .catch(err => {
