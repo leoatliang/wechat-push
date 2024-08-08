@@ -91,6 +91,10 @@ const getValueByMonth = () => {
 
     const jsonData = readJSONFile('utils/record.json');
 
+    // console.log(currentMonth);
+    // console.log(currentDay);
+    
+
     if (jsonData[monthsList[currentMonth]] == "NULL") {
         const value = jsonData[monthsList[currentMonth - 1]];
         if (currentDay <= value) {
@@ -101,6 +105,13 @@ const getValueByMonth = () => {
     } else {
         const value = jsonData[monthsList[currentMonth]];
         const diff = currentDay - value;
+        
+        // console.log(currentMonth);
+        // console.log(monthsList[currentMonth]);
+        // console.log(jsonData[monthsList[currentMonth]]);
+        // console.log(value);
+        // console.log(diff);
+        // exit();
 
         const pre = `${currentMonth}.${value}，已过 ${diff} 天，`;
         const post = diff <= 7 ? '忌辛辣刺激食物、冰镇饮品等！' : '可乐、烧烤、冰淇淋...';
