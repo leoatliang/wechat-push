@@ -13,7 +13,7 @@ const start = async () => {
 
     const data = {
         today: { value: getDate() },
-        city: { value: '淮上区' },
+        city: { value: '雨山区' },
         wea: { value: wea },
         low: { value: low },
         high: { value: high },
@@ -23,6 +23,7 @@ const start = async () => {
     }
 
     console.log(data);
+    // exit();
 
     sendMessage({
         access_token,

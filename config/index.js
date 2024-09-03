@@ -6,7 +6,7 @@ const params = {
 
     wea_app_id: '92695596',
     wea_app_secret: 'pnfmwF01',
-    wea_city_id: '101220208',
+    wea_city_id: '101220506',
 };
 
 module.exports = {
