@@ -13,13 +13,13 @@ const start = async () => {
 
     const data = {
         today: { value: getDate() },
-        city: { value: '雨山区' },
+        city: { value: '马鞍山/雨山区' },
         wea: { value: wea },
         low: { value: low },
         high: { value: high },
         menstr: { value: menstr },
         days: { value: loveDays },
-        fight: {value: '开心消消乐 + 王者荣耀 => 加加油'},
+        // fight: {value: '开心消消乐 + 王者荣耀 => 加加油'},
     }
 
     console.log(data);

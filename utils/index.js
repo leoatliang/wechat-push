@@ -113,8 +113,8 @@ const getValueByMonth = () => {
         // console.log(diff);
         // exit();
 
-        const pre = `${currentMonth}.${value}，已过 ${diff} 天，`;
-        const post = diff <= 7 ? '忌辛辣刺激食物、冰镇饮品等！' : '可乐、烧烤、冰淇淋...';
+        const pre = `${currentMonth}.${value}，才过 ${diff} 天呢，`;
+        const post = diff <= 7 ? '禁止喝小甜水！' : '想喝啥喝吧喝吧...';
 
         return `${pre}${post}`;
     }
