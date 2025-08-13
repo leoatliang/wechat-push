@@ -8,7 +8,7 @@ const start = async () => {
     let access_token = await getToken(params);
     let { wea, low, high } = await getWeather(params);
     let menstr = getValueByMonth();
-    let loveDays = getLoveDays();
+    let loveDays = getLoveDays(); // 天数
 
 
     const data = {
