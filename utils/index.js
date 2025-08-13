@@ -93,6 +93,9 @@ const getValueByMonth = () => {
 
     // console.log(currentMonth);
     // console.log(currentDay);
+
+    // console.log(jsonData[monthsList[currentMonth]]);
+    // exit()
     
 
     if (jsonData[monthsList[currentMonth]] == "NULL") {
@@ -100,7 +103,7 @@ const getValueByMonth = () => {
         if (currentDay <= value) {
             return `${currentMonth - 1}.${value}，预计于 ${value - currentDay} 天后到来！`;
         } else {
-            return `${currentMonth - 1}.${value}，较上月已推迟 ${currentDay - value} 天！`;
+            return `${currentMonth - 1}.${value}，较上月已推迟 ${currentDay - value + 2} 天！`;
         }
     } else {
         const value = jsonData[monthsList[currentMonth]];

@@ -23,7 +23,7 @@ const start = async () => {
     }
 
     console.log(data);
-    // exit();
+    exit();
 
     sendMessage({
         access_token,

@@ -1,16 +1,16 @@
 {
-    "january": "4",
+    "january": 4,
     "february": 4,
     "march": 5,
     "april": 9,
     "may": 10,
-    "june": null,
-    "july": null,
-    "august": null,
-    "september": null,
-    "october": null,
-    "november": null,
-    "december": null
+    "june": 8,
+    "july": 8,
+    "august": "NULL",
+    "september": "NULL",
+    "october": "NULL",
+    "november": "NULL",
+    "december": "NULL"
 }
 
 
