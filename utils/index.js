@@ -107,7 +107,7 @@ const getValueByMonth = () => {
         }
     } else {
         const value = jsonData[monthsList[currentMonth]];
-        const diff = currentDay - value;
+        const diff = currentDay - value + 1;
         
         // console.log(currentMonth);
         // console.log(monthsList[currentMonth]);
@@ -116,8 +116,8 @@ const getValueByMonth = () => {
         // console.log(diff);
         // exit();
 
-        const pre = `${currentMonth}.${value}，才过 ${diff} 天呢，`;
-        const post = diff <= 7 ? '禁止喝小甜水！' : '想喝啥喝吧喝吧...';
+        const pre = `${currentMonth}.${value}, 才第 ${diff} 天呢，`;
+        const post = diff <= 7 ? '禁止喝小甜水 / 吃冰淇淋！' : '哦呦, 想喝啥喝吧喝吧...';
 
         return `${pre}${post}`;
     }
