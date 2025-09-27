@@ -116,7 +116,7 @@ const getValueByMonth = () => {
         // console.log(diff);
         // exit();
 
-        const pre = `${currentMonth}.${value}, 才第 ${diff} 天呢，`;
+        const pre = `${currentMonth}.${value}, 第 ${diff} 天咯，`;
         const post = diff <= 7 ? '禁止喝小甜水 / 吃冰淇淋！' : '哦呦, 想喝啥喝吧喝吧...';
 
         return `${pre}${post}`;
