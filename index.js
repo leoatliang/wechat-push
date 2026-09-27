@@ -43,3 +43,9 @@ const start = async () => {
 }
 
 start();
+
+
+// Step 1: git status
+// Step 2: git add .
+// Step 3: git commit -m 'update'
+// Step 4: git push
