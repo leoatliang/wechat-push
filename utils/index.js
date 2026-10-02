@@ -91,10 +91,10 @@ const getValueByMonth = () => {
 
     const jsonData = readJSONFile('utils/record.json');
 
-    // console.log(currentMonth);
-    // console.log(currentDay);
+    console.log(currentMonth);
+    console.log(currentDay);
 
-    // console.log(jsonData[monthsList[currentMonth]]);
+    console.log(jsonData[monthsList[currentMonth]]);
     // exit()
     
 

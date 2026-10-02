@@ -8,9 +8,9 @@
     "july": 12,
     "august": 9,
     "september": 12,
-    "october": "None",
-    "november": "None",
-    "december": "None"
+    "october": "NULL",
+    "november": "NULL",
+    "december": "NULL"
 }
 
 
