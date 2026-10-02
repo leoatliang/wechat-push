@@ -1,8 +1,8 @@
 const params = {
     appid: 'wx1b945ee52d07dbde',
     secret: '82a7c0f975f3a8d4eab76373e071a144',
-    // touser: 'o0-3O6d2rhUdK5mZwauGrFuE20PQ',
-    touser: 'o0-3O6YPVavlz62wFwlMe-TAUjOY', //小男孩
+    touser: 'o0-3O6d2rhUdK5mZwauGrFuE20PQ',
+    // touser: 'o0-3O6YPVavlz62wFwlMe-TAUjOY', //小男孩
     template_id: '3cSVz6vLBornwirCSrGJetDw6ZFWyIdYA5P6OTwbDNU',
 
     wea_app_id: '92695596',
